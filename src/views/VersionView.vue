@@ -53,8 +53,14 @@
       </div>
 
       <div class="form-input">
-        <label for="pdf-input">Link of your PDF file:</label>
-        <input type="url" id="file" name="file" v-model="form.file" required />
+        <label for="pdf-input">Select (your paper)PDF file:</label>
+        <input
+          type="file"
+          id="pdf-input"
+          name="pdf"
+          accept=".pdf, image/*, .doc, .docx, .txt"
+          @change="onFileSelected"
+        />
       </div>
 
       <div class="submit">
@@ -84,6 +90,13 @@ export default {
 
   methods: {
     ...mapActions(['store_user']),
+    onFileSelected(event) {
+      const file = event.target.files[0]
+      if (file) {
+        const fileUrl = URL.createObjectURL(file)
+        this.form.file = fileUrl
+      }
+    },
     sauvegarde() {
       this.store_user(this.form).then(() => {
         this.form = {
