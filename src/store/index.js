@@ -22,6 +22,14 @@ export default new Vuex.Store({
         state.liste = []
       }
     },
+    DELETE_LISTE(state, payload) {
+      for (let index = 0; index < state.liste.length; index++) {
+        if (state.liste[index].author == payload.author) {
+          state.liste.splice(index, 1)
+          break
+        }
+      }
+    },
     SAVE_LISTE(state) {
       window.localStorage.setItem('liste', JSON.stringify(state.liste))
     },
@@ -30,6 +38,10 @@ export default new Vuex.Store({
   actions: {
     async store_user({ commit }, payload) {
       commit('SET_LISTE', payload)
+      commit('SAVE_LISTE')
+    },
+    async delete_user({ commit }, payload) {
+      commit('DELETE_LISTE', payload)
       commit('SAVE_LISTE')
     },
   },

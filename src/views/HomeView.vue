@@ -76,10 +76,11 @@
     <table class="table">
       <thead>
         <tr>
-          <th>Auteur</th>
+          <th>Author</th>
           <th>Title</th>
           <th>Abstract</th>
-          <th>File</th>
+          <th>Download</th>
+          <th>Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -97,6 +98,21 @@
               >
                 <path
                   d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM8 7H16V9H8V7ZM8 11H16V13H8V11ZM8 15H16V17H8V15Z"
+                  fill="#000"
+                ></path>
+              </svg>
+            </a>
+          </td>
+          <td>
+            <a @click="handleDelete(user)">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <path
+                  d="M17 6H22V8H20V21C20 21.5523 19.5523 22 19 22H5C4.44772 22 4 21.5523 4 21V8H2V6H7V3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V6ZM18 8H6V20H18V8ZM9 11H11V17H9V11ZM13 11H15V17H13V11ZM9 4V6H15V4H9Z"
                   fill="#000"
                 ></path>
               </svg>
@@ -130,7 +146,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['store_user']),
+    ...mapActions(['store_user', 'delete_user']),
     onFileSelected(event) {
       const file = event.target.files[0]
       if (file) {
@@ -148,6 +164,9 @@ export default {
         }
         alert('Save !')
       })
+    },
+    handleDelete(item) {
+      this.delete_user(item)
     },
     change() {
       this.showList = !this.showList
@@ -271,6 +290,7 @@ td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  text-align: center;
 }
 
 th {
