@@ -1,23 +1,22 @@
 <template>
   <main>
     <header>
-      <h1>Conférence économique des anciens élèves 2023</h1>
-      <p>12-14 mai 2023 | Penn State University</p>
+      <h1>Alumni Economics Conference 2023</h1>
+      <p>May 12-14, 2023 | Penn State University</p>
     </header>
 
     <section id="schedule">
-      <h2>Programme des conférences</h2>
-
-      <p>Liste des documents</p>
+      <h2>Conference Schedule</h2>
+      <p>List of Papers</p>
 
       <table class="table">
         <thead>
           <tr>
-            <th>Auteur</th>
-            <th>Titre</th>
-            <th>Résumé</th>
-            <th>Télécharger</th>
-            <th>Supprimer</th>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Abstract</th>
+            <th>Download</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -61,7 +60,7 @@
     </section>
     <hr />
 
-    <router-link to="/">Voir le formulaire</router-link>
+    <router-link to="/">Go to application form</router-link>
   </main>
 </template>
 

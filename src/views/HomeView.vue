@@ -1,33 +1,32 @@
 <template>
   <main>
     <header>
-      <h1>Conférence économique des anciens élèves 2023</h1>
-      <p>12-14 mai 2023 | Penn State University</p>
+      <h1>Alumni Economics Conference 2023</h1>
+      <p>May 12-14, 2023 | Penn State University</p>
     </header>
 
     <hr />
     <section id="about">
       <p>
-        L'Alumni Economics Conference de PennState est un événement qui
-        rassemble les professeurs, les anciens élèves et les étudiants de Penn
-        State pour partager leurs leurs recherches, leurs points de vue et leurs
-        idées.
+        The Alumni Economics Conference at PennState is a event that brings
+        together faculty, alumni and students from Penn State to share their
+        research, insights, and ideas.
       </p>
     </section>
 
     <hr />
     <section id="schedule">
-      <h2>Programme des conférences</h2>
-      <p>Bientôt...</p>
+      <h2>Conference Schedule</h2>
+      <p>Coming Soon...</p>
     </section>
     <hr />
     <section id="submission">
-      <h2>Soumission d'article</h2>
-      <p>Soumettez votre article de recherche pour la conférence.</p>
+      <h2>Paper Submission</h2>
+      <p>Submit your research paper for the conference.</p>
     </section>
     <form id="pdf-form" @submit.prevent="sauvegarde">
       <div class="form-input">
-        <label for="author">Nom de l'auteur :</label>
+        <label for="author">Author Name:</label>
         <input
           type="text"
           id="author"
@@ -39,12 +38,12 @@
       </div>
 
       <div class="form-input">
-        <label for="title">Titre du document :</label>
+        <label for="title">Paper Title:</label>
         <input type="text" id="title" name="title" v-model="form.title" />
       </div>
 
       <div class="form-input">
-        <label for="abstract">Résumé :</label>
+        <label for="abstract">Abstract:</label>
         <textarea
           id="abstract"
           name="abstract"
@@ -54,9 +53,7 @@
       </div>
 
       <div class="form-input">
-        <label for="pdf-input"
-          >Sélectionnez (votre papier) le fichier PDF :</label
-        >
+        <label for="pdf-input">Select (your paper)PDF file:</label>
         <input
           type="file"
           id="pdf-input"
@@ -67,7 +64,7 @@
       </div>
 
       <div class="submit">
-        <button type="submit">Soumettre</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   </main>
