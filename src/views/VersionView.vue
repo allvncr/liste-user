@@ -79,7 +79,7 @@ export default {
         author: null,
         title: null,
         abstract: null,
-        file: null,
+        url: null,
       },
     }
   },
@@ -94,7 +94,7 @@ export default {
       const file = event.target.files[0]
       if (file) {
         const fileUrl = URL.createObjectURL(file)
-        this.form.file = fileUrl
+        this.form.url = fileUrl
       }
     },
     sauvegarde() {
@@ -103,7 +103,7 @@ export default {
           author: null,
           title: null,
           abstract: null,
-          file: null,
+          url: null,
         }
         alert('Save !')
       })

@@ -25,7 +25,7 @@
             <td>{{ user.title }}</td>
             <td>{{ user.abstract }}</td>
             <td>
-              <a :href="user.file" target="_blank" v-if="user.file">
+              <a :href="user.url" target="_blank" v-if="user.url">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -76,10 +76,13 @@ export default {
   },
 
   methods: {
-    ...mapActions(['delete_user']),
+    ...mapActions(['delete_user', 'get_user']),
     handleDelete(item) {
       this.delete_user(item)
     },
+  },
+  mounted() {
+    this.get_user()
   },
 }
 </script>
@@ -150,6 +153,7 @@ th {
 }
 
 a {
-  color: #202c3e;
+  color: #fff;
+  cursor: pointer;
 }
 </style>

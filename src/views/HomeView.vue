@@ -54,7 +54,7 @@
 
       <div class="form-input">
         <label for="pdf-input">Link of your PDF file:</label>
-        <input type="url" id="file" name="file" v-model="form.file" required />
+        <input type="url" id="url" name="url" v-model="form.url" required />
       </div>
 
       <div class="submit">
@@ -73,7 +73,7 @@ export default {
         author: null,
         title: null,
         abstract: null,
-        file: null,
+        url: null,
       },
     }
   },
@@ -90,7 +90,7 @@ export default {
           author: null,
           title: null,
           abstract: null,
-          file: null,
+          url: null,
         }
         alert('Save !')
       })
